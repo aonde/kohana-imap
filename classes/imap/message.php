@@ -419,8 +419,8 @@ class Imap_Message
 
 			$message_body = self::decode($message_body, $structure->encoding);
 
-			if ($parameters['charset'] !== self::$charset)
-				$message_body = iconv($parameters['charset'], self::$charset, $message_body);
+			if ($parameters['CHARSET'] !== self::$charset)
+				$message_body = iconv($parameters['CHARSET'], self::$charset, $message_body);
 
 			if (strtolower($structure->subtype) == 'plain' or $structure->type == 1)
 			{
